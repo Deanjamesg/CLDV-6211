@@ -32,6 +32,14 @@ namespace CLDV_POE.Controllers
         {
             return View();
         }
+        public IActionResult LogIn()
+        {
+            return View();
+        }
+        public IActionResult SignUp()
+        {
+            return View();
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

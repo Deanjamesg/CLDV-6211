@@ -17,6 +17,45 @@ html {
   min-height: 100%;
 }
 
+.custom-card {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+.row-custom {
+    /*backdrop-filter: blur(2px);*/
+}
+
+.container-title {
+    /*backdrop-filter: blur(2px);*/
+}
+
 body {
-  margin-bottom: 60px;
+    background-image: url('https://static.vecteezy.com/system/resources/previews/024/741/762/non_2x/nature-hardwood-stripes-create-abstract-tree-backdrop-generative-ai-free-photo.jpg'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
+    background-size: cover;
+    background-position: center;
+    padding: 0px;
+    color: white;
+    margin-bottom: 30px;
+
+}
+
+header {
+    backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 0px;
+    font-size: 18px;
+
+}
+
+/* https://www.vecteezy.com/photo/24741762-nature-hardwood-stripes-create-abstract-tree-backdrop-generative-ai */
+footer {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: left;
+    font-size: 12px;
+    padding: 10px;
+
 }
