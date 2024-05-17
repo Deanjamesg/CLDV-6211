@@ -2,33 +2,37 @@
     ViewData["Title"] = "Contact Us";
 }
 
+<div class="container">
+    <div class="contact-us">
+        <h2>Contact Us</h2>
+        <p>Please complete this form so our support team can help you.</p>
+        <p>All returns and cancelling of orders must be requested using the contact form.</p>
+        <p>For urgent queries, please <a href="khumalocraft@emporium.com">email us</a> or call us at <a href="tel:+27926729182">+27 92 672 9182</a>.</p>
 
+        <div class="form-box">
 
-<div class="text-center">
-    <h1 class="display-4" style="font-size: 5rem;">Contact Us</h1>
-    <hr>
-    <p>Please complete this form so our support team can help you.</p>
-    <p>All returns and cancelling of orders must be requested using the contact form.</p>
-    <p>For urgent queries, please <a href="khumalocraft@emporium.com">email us</a> or call us at <a href="tel:+27926729182">+27 92 672 9182</a>.</p>
+            <form action="#">
+                <div class="input-row">
+                    <div class="input-box">
+                        <input type="text" required />
+                        <label>Name</label>
+                    </div>
 
-    <div style="text-align:center;">
-        <form>
-            <div style="display: inline-block; text-align: left;">
-                <input type="text" id="name" name="name" placeholder="Name" style="width: 200px;">
-            </div>
-            <div style="display: inline-block; text-align: left;">
-                <input type="email" id="email" name="email" placeholder="Email" style="width: 200px;">
-            </div>
-            <div>
-                <label for="message">Your Request:</label><br>
-                <textarea id="message" name="message" placeholder="Type here..." rows="4" cols="50" style="width: 400px;"></textarea>
-            </div>
-            <div>
-                <input type="button" value="Submit">
-            </div>
-        </form>
+                    <div class="input-box">
+                        <input type="email" required />
+                        <label>Email</label>
+                    </div>
+                </div>
+                <div class="input-box">
+                    <input type="text" required />
+                    <label>Your Request:</label>
+                </div>
+
+                <button type="submit" class="btn">Submit</button>
+            </form>
+
+        </div>
     </div>
-    
 </div>
 
 

@@ -28,6 +28,11 @@ namespace CLDV_POE.Controllers
             return View();
         }
 
+        public IActionResult MyWork2()
+        {
+            return View();
+        }
+
         public IActionResult AboutUs()
         {
             return View();
@@ -36,7 +41,7 @@ namespace CLDV_POE.Controllers
         {
             return View();
         }
-        public IActionResult SignUp()
+        public IActionResult Register()
         {
             return View();
         }

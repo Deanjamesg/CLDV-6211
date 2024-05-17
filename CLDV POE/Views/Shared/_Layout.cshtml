@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/CLDV_POE.styles.css" asp-append-version="true" />
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins'>
     <link rel="icon" href="Images/KC.png" type="image/x-icon">
     
 </head>
@@ -25,7 +26,7 @@
                             <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="MyWork">My Work</a>
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="MyWork2">My Work</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-controller="Home" asp-action="AboutUs">About Us</a>
@@ -36,10 +37,10 @@
                     </ul>
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link" asp-controller="Home" asp-action="LogIn">Log In</a>
+                            <a class="nav-link" asp-controller="Home" asp-action="LogIn"><ion-icon name="cart-outline" size="large"></ion-icon></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-controller="Home" asp-action="SignUp">Sign Up</a>
+                            <a class="nav-link" asp-controller="Home" asp-action="LogIn"><ion-icon name="person" size="large"></ion-icon></a>
                         </li>
                     </ul>
                 </div>
@@ -63,5 +64,8 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>

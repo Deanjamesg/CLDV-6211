@@ -1,43 +1,386 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
+/*
+    References:
+    https://www.w3schools.com/css/css3_flexbox_container.asp
+
+    https://ionic.io/ionicons
+
+    https://www.vecteezy.com/photo/24741762-nature-hardwood-stripes-create-abstract-tree-backdrop-generative-ai
+
+    https://www.codewithrandom.com/2023/12/02/css-text-hover-effects/
+
+*/
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
-.custom-card {
-    background-color: rgba(0, 0, 0, 0.5);
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 75vh;
+    text-align: center;
+}
+
+.container .contact-us {
+    width: 800px;
+    height: 100%;
+    background-color: transparent;
+    backdrop-filter: blur(5px);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 10px 18px 10px 10px rgba(0,0,0,0.7);
+}
+
+.input-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2em;
+    width: 100%;
+}
+
+.contact-us .btn {
+    width: 100%;
+    height: 45px;
+    background-color: rgba(0, 0, 0, 0.75);
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
     color: white;
+    transition: 500ms;
 }
 
-.row-custom {
-    /*backdrop-filter: blur(2px);*/
+.contact-us .btn:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
+    transform: scale(1.02);
 }
 
-.container-title {
-    /*backdrop-filter: blur(2px);*/
+.contact-us a {
+    color: white;
+    text-decoration: none;
+}
+
+.contact-us a:hover {
+    text-decoration: underline;
+}
+
+.container .about-us {
+    width: 700px;
+    height: 100%;
+    background-color: transparent;
+    backdrop-filter: blur(5px);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 10px 18px 10px 10px rgba(0,0,0,0.7);
+}
+
+.about-us h2{
+    margin-bottom: 30px;
+}
+
+.container h2 {
+    color: white;
+    font-size: 3.5rem;
+    text-shadow: 0px 7px 7px rgba(0, 0, 0, 1 );
+}
+
+.container h3 {
+    color: white;
+    font-size: 1.5rem;
+    text-shadow: 0px 7px 7px rgba(0, 0, 0, 1 );
+}
+
+.container h1 {
+    font-size: 8em;
+    font-weight: 500;
+    color: #fff;
+    letter-spacing: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: 0.75s;
+}
+
+.container h1:hover {
+    color: #fff;
+    text-shadow: 0 0 5px #fff, 0 0 25px #fff, 0 0 50px #fff, 0 0 100px #fff;
+    /*text-shadow: 0px 7px 7px rgba(0, 0, 0, 1 );*/
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 1em;
+    width: fit-content;
+}
+
+.content .box {
+    background-color: transparent;
+    backdrop-filter: blur(5px);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    width: 300px;
+    height: 220px;
+    color: white;
+    padding: 10px;
+    border-radius: 20px;
+    transition: 500ms ease;
+
+}
+
+.content .box:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
+    transform: scale(1.2);
+    z-index: 1;
+    
+}
+
+.content .box .box-button {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    background-color: rgba(0, 0, 0, 0.75);
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    color: white;
+    transition: 500ms;
+}
+
+.wrapper {
+    backdrop-filter: blur(5px);
+    box-shadow: 10px 18px 10px 10px rgba(0,0,0,0.7);
+    position: relative;
+    width: 400px;
+    height: 100%;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-box {
+    width: 100%;
+    padding: 40px;
+}
+
+.form-box h2{
+    font-size: 3em;
+    text-align: center;
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid white;
+    margin: 30px 0;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    font-weight: 500;
+    pointer-events: none;
+    transition: 500ms;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: -5px;
+
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: white;
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+}
+
+.input-box .icon {
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    color: white;
+    line-height: 57px;
+}
+
+.remember-forgot {
+    font-size: .9em;
+    color: white;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.remember-forgot label input {
+    accent-color: #00ff21;
+    margin-right: 6px;
+}
+
+.wrapper .btn {
+    width: 100%;
+    height: 45px;
+    background-color: rgba(0, 0, 0, 0.75);
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: white;
+    transition: 500ms;
+}
+
+.wrapper .btn:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
+    transform: scale(1.02);
+}
+
+.remember-forgot a {
+    color: white;
+    text-decoration: none;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+.login-register {
+    font-size: .9em;
+    color: white;
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 10px;
+}
+
+.login-register p a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-register p a:hover {
+    text-decoration: underline;
+}
+
+.card-container {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: auto auto;
+    gap: 25px;
+}
+
+.card {
+    backdrop-filter: blur(5px);
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    color: white;
+    width: 600px; /* Adjust width here */
+    height: 100%;
+    max-width: 100%; /* Ensure card doesn't exceed container width */
+    display: flex;
+    flex-direction: row; /* Arrange the image and text in a row */
+    align-items: center; /* Center items vertically */
+    overflow: hidden;
+    filter: brightness(85%);
+    transition: 0.5s ease-in-out;
+}
+
+.card:hover {
+    filter: brightness(105%);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,1);
+}
+
+.card .cart-button {
+    position: absolute; /* Position the button absolutely within the card */
+    bottom: 10px; /* Distance from the bottom of the card */
+    left: 210px; /* Distance from the right side of the card */
+    background-color: rgba(0, 0, 0, 0.75);
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    color: white;
+    transition: 500ms;
+}
+
+.cart-button:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
+}
+
+.card .card-img {
+    border-radius: 20px;
+    height: 200px; /* image height */
+    width: 200px;
+    object-fit: fill; /* ensures the image covers the entire container */
+
+}
+
+.card .card-price {
+    position: absolute; /* Position the button absolutely within the card */
+    bottom: 40px; /* Distance from the bottom of the card */
+    left: 215px; /* Distance from the right side of the card */
+}
+
+.card .card-body {
+    padding: 1rem; /* padding for the card body */
+    height: 100%;
+    float: right;
+    flex: 1; /* Let the text fill the remaining space */
+}
+
+.card .card-title {
+    font-size: 1.5rem; /* title font size */
+    margin-bottom: 0.75rem; /* bottom margin for the title */
+}
+
+.card .card-desc {
+    font-size: 12px; /* text font size */
+    margin-bottom: 0.5rem; /* bottom margin for the text */
 }
 
 body {
-    background-image: url('https://static.vecteezy.com/system/resources/previews/024/741/762/non_2x/nature-hardwood-stripes-create-abstract-tree-backdrop-generative-ai-free-photo.jpg'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
+    background-image: url('https://static.vecteezy.com/system/resources/previews/024/741/762/non_2x/nature-hardwood-stripes-create-abstract-tree-backdrop-generative-ai-free-photo.jpg');
     background-size: cover;
     background-position: center;
     padding: 0px;
     color: white;
-    margin-bottom: 30px;
-
+    margin-bottom: 70px;
+    font-family: Poppins, sans-serif;
 }
 
 header {
@@ -45,10 +388,8 @@ header {
     background-color: rgba(0, 0, 0, 0.5);
     padding: 0px;
     font-size: 18px;
-
 }
 
-/* https://www.vecteezy.com/photo/24741762-nature-hardwood-stripes-create-abstract-tree-backdrop-generative-ai */
 footer {
     background-color: rgba(0, 0, 0, 0.5);
     position: absolute;
@@ -57,5 +398,4 @@ footer {
     text-align: left;
     font-size: 12px;
     padding: 10px;
-
 }
