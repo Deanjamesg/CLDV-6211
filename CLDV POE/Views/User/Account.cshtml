@@ -1,0 +1,25 @@
+﻿@model CLDV_POE.Models.User
+@{
+    ViewData["Title"] = "Account";
+}
+<div class="container">
+    <div class="account">
+        <div class="account-box-options">
+            <div class="navbar">
+                <a class="nav-link" asp-controller="User" asp-action="Account">Account Details</a>
+                <a class="nav-link" asp-controller="User" asp-action="ViewCart">View Cart</a>
+                <a class="nav-link" asp-controller="User" asp-action="OrderHistory">Order History</a>
+                <a class="nav-link" asp-controller="Product" asp-action="YourProducts">Your Products</a>
+                <a class="nav-link" asp-controller="Product" asp-action="SellProduct">Sell Products</a>
+                <a class="nav-link" asp-controller="User" asp-action="Clients">Your Clients</a>
+                <a class="nav-link" asp-controller="User" asp-action="SignOut">Sign Out</a>
+            </div>
+        </div>
+        <div class="account-box-content">
+            <p class="bubble-title">Account Details</p>
+            <p class="bubble">Username: @Model.Username</p>
+            <p class="bubble">Email: @Model.Email</p>
+            <p class="bubble">Password: @Model.Password</p>
+        </div>
+    </div>
+</div>

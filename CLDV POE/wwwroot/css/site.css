@@ -37,6 +37,100 @@ html {
     text-align: center;
 }
 
+.container .account {
+    margin-top: 50px;
+    width: 1000px;
+    height: 700px;
+    background-color: transparent;
+    backdrop-filter: blur(5px);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 10px 18px 10px 10px rgba(0,0,0,0.7);
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+
+}
+
+.account .account-box-options {
+    display: flex;
+    background-color: transparent;
+    flex-direction: column;
+    border: 2px solid rgba(255, 255, 255, 0.75);
+    border-radius: 20px;
+    padding: 10px;
+    width: 200px;
+    flex-shrink: 0;
+}
+
+.account .account-box-content {
+    display: flex;
+    background-color: transparent;
+    flex-direction: column;
+    text-align: left;
+    border: 2px solid rgba(255, 255, 255, 0.75);
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    padding: 40px;
+    color: white;
+}
+
+.bubble {
+    color: white;
+    background-color: rgba(0,0,0,0.7);
+    border-radius: 20px;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 550;
+    padding: 15px;
+}
+
+.account .navbar a{
+    background-color: transparent;
+    position: relative;
+    color: white;
+    font-size: 16px;
+    font-weight: 550;
+    text-decoration: none;
+    padding: 4px;
+    margin: 12px;
+}
+
+.account .navbar a::before {
+    content:'';
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: 0.3s;
+}
+
+.account .navbar a:hover::before {
+    width: 100%;
+}
+
+.account .btn {
+    width: 100%;
+    height: 45px;
+    background-color: rgba(0, 0, 0, 0.75);
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: white;
+    transition: 500ms;
+}
+
+.account .btn:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
+    transform: scale(1.02);
+}
+
 .container .contact-us {
     width: 800px;
     height: 100%;
@@ -84,7 +178,7 @@ html {
 }
 
 .container .about-us {
-    width: 700px;
+    width: 800px;
     height: 100%;
     background-color: transparent;
     backdrop-filter: blur(5px);
@@ -92,22 +186,6 @@ html {
     border-radius: 20px;
     padding: 40px;
     box-shadow: 10px 18px 10px 10px rgba(0,0,0,0.7);
-}
-
-.about-us h2{
-    margin-bottom: 30px;
-}
-
-.container h2 {
-    color: white;
-    font-size: 3.5rem;
-    text-shadow: 0px 7px 7px rgba(0, 0, 0, 1 );
-}
-
-.container h3 {
-    color: white;
-    font-size: 1.5rem;
-    text-shadow: 0px 7px 7px rgba(0, 0, 0, 1 );
 }
 
 .container h1 {
@@ -123,7 +201,40 @@ html {
 .container h1:hover {
     color: #fff;
     text-shadow: 0 0 5px #fff, 0 0 25px #fff, 0 0 50px #fff, 0 0 100px #fff;
-    /*text-shadow: 0px 7px 7px rgba(0, 0, 0, 1 );*/
+}
+.container h2 {
+    color: white;
+    font-size: 3.5rem;
+    text-shadow: 0px 7px 7px rgba(0, 0, 0, 1 );
+}
+
+.container h3 {
+    color: white;
+    font-size: 1.5rem;
+    text-shadow: 0px 7px 7px rgba(0, 0, 0, 1 );
+}
+
+.container h4 {
+    color: white;
+    font-size: 18px;
+    text-shadow: 0px 7px 7px rgba(0, 0, 0, 1 );
+}
+
+.bubble-title {
+    color: white;
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    padding: 30px;
+    text-shadow: 0px 7px 7px rgba(0, 0, 0, 1 );
+}
+
+
+.container hr {
+    border: none; 
+    height: 0px; 
+    background-color: #000; 
+    margin: 20px 20px; 
 }
 
 .content {
@@ -167,6 +278,48 @@ html {
     cursor: pointer;
     color: white;
     transition: 500ms;
+}
+
+.table {
+    text-align: center;
+    width: 100%;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    color: white;
+    border-spacing: 0 25px;
+    border-collapse: separate;
+}
+
+.table th {
+    font-size: 20px;
+    font-weight: 550;
+    color: white;
+    padding: 15px;
+}
+
+.table td {
+    padding: 5px;
+    gap: 10px;
+    margin: 10px;
+}
+
+.table .cart-button {
+    background-color: #fff;
+    height: 35px;
+    width: 100%;
+    font-weight: 600;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    color: black;
+    transition: 500ms;
+}
+
+.table .cart-button:hover {
+    transform: scale(1.1);
 }
 
 .wrapper {
@@ -237,6 +390,23 @@ html {
     line-height: 57px;
 }
 
+.input-select select{
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: white;
+    padding: 0 35px 0 5px;
+}
+
+.input-select select option{
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white;
+}
+
 .remember-forgot {
     font-size: .9em;
     color: white;
@@ -303,33 +473,192 @@ html {
     gap: 25px;
 }
 
-.card {
-    backdrop-filter: blur(5px);
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #fff;
+    border-radius: 10px;
+}
+
+.product-container {
+    display: flex;
+    background-color: transparent;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 15px;
+    overflow: auto;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.product-container .card {
+    backdrop-filter: blur(7px);
+    flex: none;
     background-color: transparent;
     border: 2px solid rgba(255, 255, 255, 0.5);
     border-radius: 20px;
     color: white;
-    width: 600px; /* Adjust width here */
+    width: 550px;
+    height: 150px;
+    transition: 0.3s ease-in-out;
+    filter: brightness(100%);
+}
+
+.product-container .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,1);
+}
+
+.product-container .card .card-img {
+    border-radius: 20px;
+    height: 150px; 
+    width: 150px;
+    object-fit: fill; 
+}
+
+.product-container .card .card-price {
+    position: absolute; 
+    bottom: 0px; 
+    left: 440px; 
+}
+
+.product-container .card .card-body {
+    position: absolute;
+    top: 20px;
     height: 100%;
-    max-width: 100%; /* Ensure card doesn't exceed container width */
+}
+
+.product-container .card .card-title {
+    position: absolute;
+    top: 8px;
+    left: 170px;
+    font-size: 18px; 
+    margin-bottom: 0.75rem; 
+}
+
+.product-container .card .card-desc {
+    position: absolute;
+    left: 170px;
+    top: 40px;
+    text-align: left;
+    font-size: 12px; 
+    margin-bottom: 0.5rem; 
+}
+
+.product-container .card .card-quantity {
+    position: absolute;
+    left: 320px;
+    bottom: 10px;
+    text-align: left;
+    font-size: 16px;
+    margin-bottom: 0.5rem;
+}
+
+.product-container .card .cart-button {
+    position: absolute;
+    bottom: 10px;
+    left: 170px;
+    background-color: rgba(0, 0, 0, 0.75);
+    height: 35px;
+    width: 120px;
+    font-weight: 550;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    color: white;
+    transition: 500ms;
+}
+
+.product-container .cart-button:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
+}
+
+.product-container .order-button {
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.75);
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 550;
+    color: white;
+    transition: 500ms;
+}
+
+.product-container .order-button:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
+    transform: scale(1.02);
+}
+
+.custom-select select {
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white;
+    position: absolute;
+    left: 300px;
+    height: 35px;
+    bottom: 10px;
+    border: none;
+    border-radius: 6px;
+}
+
+.custom-select select option {
+    padding: 5px 5px;
+    background: transparent;
+    color: white;
+}
+
+.card {
+    backdrop-filter: blur(7px);
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    color: white;
+    width: 600px;
+    height: 100%;
+    max-width: 100%;
     display: flex;
-    flex-direction: row; /* Arrange the image and text in a row */
-    align-items: center; /* Center items vertically */
+    flex-direction: row;
+    align-items: center;
     overflow: hidden;
-    filter: brightness(85%);
     transition: 0.5s ease-in-out;
 }
 
 .card:hover {
-    filter: brightness(105%);
     box-shadow: 0 8px 16px 0 rgba(0,0,0,1);
 }
 
-.card .cart-button {
-    position: absolute; /* Position the button absolutely within the card */
-    bottom: 10px; /* Distance from the bottom of the card */
-    left: 210px; /* Distance from the right side of the card */
+.quantity-input {
+    position: absolute;
+    color: white;
     background-color: rgba(0, 0, 0, 0.75);
+    bottom: 10px;
+    left: 400px;
+    height: 35px;
+    width: 50px;
+    padding: 5px;
+    border: none;
+    border-radius: 6px;
+}
+
+.quantity label {
+    position: absolute;
+    bottom: 17px;
+    left: 365px;
+    color: white;
+}
+
+.card .cart-button {
+    position: absolute;
+    bottom: 10px;
+    left: 210px;
+    background-color: rgba(0, 0, 0, 0.75);
+    height: 35px;
+    width: 120px;
+    font-weight: 550;
     border: none;
     outline: none;
     border-radius: 6px;
@@ -344,35 +673,67 @@ html {
 
 .card .card-img {
     border-radius: 20px;
-    height: 200px; /* image height */
+    height: 200px;
     width: 200px;
-    object-fit: fill; /* ensures the image covers the entire container */
-
+    object-fit: fill;
 }
 
 .card .card-price {
-    position: absolute; /* Position the button absolutely within the card */
-    bottom: 40px; /* Distance from the bottom of the card */
-    left: 215px; /* Distance from the right side of the card */
+    font-size: 18px;
+    font-weight: 550;
+    position: absolute; 
+    bottom: 0px; 
+    left: 460px; 
 }
 
 .card .card-body {
-    padding: 1rem; /* padding for the card body */
+    padding: 1rem; 
     height: 100%;
-    float: right;
-    flex: 1; /* Let the text fill the remaining space */
 }
 
 .card .card-title {
-    font-size: 1.5rem; /* title font size */
-    margin-bottom: 0.75rem; /* bottom margin for the title */
+    font-size: 1.5rem; 
+    margin-bottom: 0.75rem; 
 }
 
 .card .card-desc {
-    font-size: 12px; /* text font size */
-    margin-bottom: 0.5rem; /* bottom margin for the text */
+    font-size: 12px; 
+    text-align: center;
+    margin-bottom: 0.5rem; 
 }
 
+.card .card-category {
+    position: absolute;
+    bottom: 40px;
+    right: 30px;
+    color: white;
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 20px;
+    width: fit-content;
+    font-size: 14px;
+    height: 40px;
+    padding: 10px;
+}
+
+.card .available {
+    position: absolute;
+    font-size: 18px;
+    font-weight: 550;
+    left: 220px;
+    bottom: 50px;
+    color: springgreen;
+}
+
+.card .unavailable {
+    position: absolute;
+    font-size: 18px;
+    font-weight: 550;
+    left: 220px;
+    bottom: 50px;
+    color: red;
+    text-decoration: line-through;
+}
+    
 body {
     background-image: url('https://static.vecteezy.com/system/resources/previews/024/741/762/non_2x/nature-hardwood-stripes-create-abstract-tree-backdrop-generative-ai-free-photo.jpg');
     background-size: cover;

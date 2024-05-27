@@ -1,0 +1,50 @@
+﻿@model CLDV_POE.Models.User
+@{
+    ViewData["Title"] = "Clients";
+    var clientList = ViewData["clientList"] as List<CLDV_POE.Models.UserClients>;
+}
+
+<div class="container">
+    <div class="account">
+        <div class="account-box-options">
+            <div class="navbar">
+                <a class="nav-link" asp-controller="User" asp-action="Account">Account Details</a>
+                <a class="nav-link" asp-controller="User" asp-action="ViewCart">View Cart</a>
+                <a class="nav-link" asp-controller="User" asp-action="OrderHistory">Order History</a>
+                <a class="nav-link" asp-controller="Product" asp-action="YourProducts">Your Products</a>
+                <a class="nav-link" asp-controller="Product" asp-action="SellProduct">Sell Products</a>
+                <a class="nav-link" asp-controller="User" asp-action="Clients">Your Clients</a>
+                <a class="nav-link" asp-controller="User" asp-action="SignOut">Sign Out</a>
+            </div>
+        </div>
+        <div class="account-box-content">
+            <h3>Your Clients</h3>
+            <div class="product-container">
+                @if (clientList != null)
+                {
+                    <div class="table">
+                        <table>
+                            <tr>
+                                <th>Product Name</th>
+                                <th>Customer Email</th>
+                                <th>Quantity</th>
+                                <th>Status</th>
+                            </tr>
+                            @foreach (var client in clientList)
+                            {
+                                <form asp-controller="User" asp-action="ViewOrder" method="post">
+                                <tr>
+                                    <td>@client.ProductName</td>
+                                    <td>@client.CustomerEmail</td>
+                                    <td>@client.ProductQuantity</td>
+                                    <td>Sold</td>
+                                </tr>
+                                </form>
+                            }
+                        </table>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

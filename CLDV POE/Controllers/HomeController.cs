@@ -7,14 +7,17 @@ namespace CLDV_POE.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IHttpContextAccessor httpContextAccessor)
         {
             _logger = logger;
+            _httpContextAccessor = httpContextAccessor;
         }
 
         public IActionResult Index()
         {
+
             return View();
         }
 
@@ -23,25 +26,7 @@ namespace CLDV_POE.Controllers
             return View();
         }
 
-        public IActionResult MyWork()
-        {
-            return View();
-        }
-
-        public IActionResult MyWork2()
-        {
-            return View();
-        }
-
         public IActionResult AboutUs()
-        {
-            return View();
-        }
-        public IActionResult LogIn()
-        {
-            return View();
-        }
-        public IActionResult Register()
         {
             return View();
         }

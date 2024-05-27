@@ -1,0 +1,73 @@
+﻿@model CLDV_POE.Models.User
+@{
+    ViewData["Title"] = "Your Products";
+    var userProducts = ViewData["UsersProducts"] as List<CLDV_POE.Models.Product>;
+}
+
+<div class="container">
+    <div class="account">
+        <div class="account-box-options">
+            <div class="navbar">
+                <a class="nav-link" asp-controller="User" asp-action="Account">Account Details</a>
+                <a class="nav-link" asp-controller="User" asp-action="ViewCart">View Cart</a>
+                <a class="nav-link" asp-controller="User" asp-action="OrderHistory">Order History</a>
+                <a class="nav-link" asp-controller="Product" asp-action="YourProducts">Your Products</a>
+                <a class="nav-link" asp-controller="Product" asp-action="SellProduct">Sell Products</a>
+                <a class="nav-link" asp-controller="User" asp-action="Clients">Your Clients</a>
+                <a class="nav-link" asp-controller="User" asp-action="SignOut">Sign Out</a>
+            </div>
+        </div>
+        <div class="account-box-content">
+            <h3>Your Products</h3>
+            <div class="product-container">
+                @if (userProducts != null)
+                {
+                    @foreach (var product in userProducts)
+                    {
+                        <div class="card">
+                            <img src="@product.ProdURL" class="card-img" alt="@product.ProdTitle">
+                            <h5 class="card-title">@product.ProdTitle</h5>
+                            <p class="card-desc">@product.ProdDesc</p>
+                            <p class="card-price">R @product.ProdPrice.ToString("0")</p>
+                            <form asp-controller="Product" asp-action="UpdateAvailability" method="post">
+                                <div class="custom-select">
+                                    <select name="ProdAvailable" onchange="submitFormWithDelay(this.form)" required>
+                                        <option value="@product.ProdAvailable">
+                                            @if (product.ProdAvailable == 1)
+                                            {
+                                                <span class="available">In Stock</span>
+                                                <option value="0">Out of Stock</option>
+                                            }
+                                            else if (product.ProdAvailable == 0)
+                                            {
+                                                <span class="unavailable">Out of Stock</span>
+                                                <option value="1">In Stock</option>
+                                            }
+                                        </option>
+                                    </select>
+                                </div>
+                                <input type="hidden" name="ProductID" value="@product.ProdID" />
+                            </form>
+                            <form asp-controller="Product" asp-action="RemoveProduct" method="post">
+                                <input type="hidden" name="ProductID" value="@product.ProdID" />
+                                <button type="submit" class="cart-button">Remove Item</button>
+                            </form>
+                        </div>
+                        
+
+                    }
+                }
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    function submitFormWithDelay(form) {
+        setTimeout(function () {
+            form.submit();
+        }, 100);
+    }
+</script>

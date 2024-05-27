@@ -1,17 +1,18 @@
-﻿@{
-    ViewData["Title"] = "LogIn";
+﻿@model CLDV_POE.Models.User
+@{
+    ViewData["Title"] = "Login";
 }
 <div class="container">
     <div class="wrapper">
         <div class="form-box login">
             <h2>Login</h2>
 
-            <form action="#">
+            <form asp-controller="Login" asp-action="Login" method="post">
                 <div class="input-box">
                     <span class="icon">
                         <ion-icon name="person"></ion-icon>
                     </span>
-                    <input type="text" required />
+                    <input type="text" name="Username" required />
                     <label>Username</label>
                 </div>
 
@@ -19,19 +20,26 @@
                     <span class="icon">
                         <ion-icon name="lock-closed"></ion-icon>
                     </span>
-                    <input type="password" required />
+                    <input type="password" name="Password" required />
                     <label>Password</label>
                 </div>
 
                 <div class="remember-forgot">
                     <label><input type="checkbox" />Remember me</label>
-                    <a href="#"> Forgot password?</a>
+                    <a asp-controller="Home" asp-action="ContactUs"> Forgot password?</a>
                 </div>
 
                 <button type="submit" class="btn">Login</button>
 
+                @if (TempData["LoginFailed"] != null)
+                {
+                    <div class="alert alert-danger">
+                        @TempData["LoginFailed"]
+                    </div>
+                }
+
                 <div class="login-register">
-                    <p>Don't have an account? <a class asp-controller="Home" asp-action="Register">Register</a></p>
+                    <p>Don't have an account? <a class asp-controller="User" asp-action="RegisterPage">Register</a></p>
                 </div>
             </form>
         </div>

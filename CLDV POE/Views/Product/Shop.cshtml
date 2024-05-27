@@ -1,0 +1,54 @@
+﻿@model CLDV_POE.Models.Product
+@{
+    ViewData["Title"] = "My Work";
+    var products = ViewData["Products"] as List<CLDV_POE.Models.Product>;
+}
+
+@*https://verveculture.com/collections/artisan-and-handmade-products*@
+
+<h2>Shop</h2>
+<hr>
+
+<div class="card-container">
+    @if (products != null)
+    {
+        @foreach (var product in products)
+        {
+            <form asp-controller="CartItems" asp-action="AddToCart" method="post">
+                <div class="card">
+                    <img src="@product.ProdURL" class="card-img" alt="@product.ProdTitle">
+                    <div class="card-body">
+                        <h5 class="card-title">@product.ProdTitle</h5>
+                        <p class="card-desc">@product.ProdDesc</p>
+                        <p class="card-price">R @product.ProdPrice.ToString("0")</p>
+                        <p class="card-available">
+                            @if (product.ProdAvailable == 1)
+                            {
+                                <span class="available">In Stock</span>
+                            }
+                            else
+                            {
+                                <span class="unavailable">Out of Stock</span>
+                            }
+                        </p>
+                        <div class="quantity">
+                            <input type="number" min="1" max="10" value="1" class="quantity-input" name="quantity" />
+                            <label>Qty</label>
+                        </div>
+                        <p class="card-category"> @product.ProdCategory</p>
+                        <input type="hidden" name="productID" value="@product.ProdID" />
+                        @if (product.ProdAvailable == 1)
+                        {
+                            <button type="submit" class="cart-button">Add to Cart</button>
+                        }
+                        else
+                        {
+                            <button type="button" class="cart-button" disabled>Add to Cart</button>
+                        }
+                    </div>
+                </div>
+            </form>
+
+        }
+    }
+</div>

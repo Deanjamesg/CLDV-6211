@@ -1,0 +1,65 @@
+﻿@model CLDV_POE.Models.User
+@{
+    ViewData["Title"] = "View Cart";
+    var cartItems = ViewData["CartItems"] as List<CLDV_POE.Models.ViewCartDisplay>;
+    int cartID = 0;
+    decimal cartTotal = 0;
+    if (ViewData["CartTotal"] != null)
+    {
+        cartTotal = Convert.ToDecimal(ViewData["CartTotal"]);
+    }
+}
+
+<div class="container">
+    <div class="account">
+        <div class="account-box-options">
+            <div class="navbar">
+                <a class="nav-link" asp-controller="User" asp-action="Account">Account Details</a>
+                <a class="nav-link" asp-controller="User" asp-action="ViewCart">View Cart</a>
+                <a class="nav-link" asp-controller="User" asp-action="OrderHistory">Order History</a>
+                <a class="nav-link" asp-controller="Product" asp-action="YourProducts">Your Products</a>
+                <a class="nav-link" asp-controller="Product" asp-action="SellProduct">Sell Products</a>
+                <a class="nav-link" asp-controller="User" asp-action="Clients">Your Clients</a>
+                <a class="nav-link" asp-controller="User" asp-action="SignOut">Sign Out</a>
+            </div>
+        </div>
+
+        <div class="account-box-content">
+            <h3>Your Cart</h3>
+            @if (TempData["ErrorMessage"] != null)
+            {
+                <div class="alert alert-danger">
+                    @TempData["ErrorMessage"]
+                </div>
+            }
+            <div class="product-container">
+                @if (cartItems != null)
+                {
+                    @foreach (var item in cartItems)
+                    {
+                        <form asp-controller="CartItems" asp-action="RemoveFromCart" method="post">
+                            <div class="card">
+                                <img src="@item.ProductURL" class="card-img" alt="@item.ProductName">
+                                <h5 class="card-title">@item.ProductName</h5>
+                                <p class="card-desc">@item.ProductDescription</p>
+                                <p class="card-price">R @item.ProductPrice.ToString("0")</p>
+                                <p class="card-quantity">Qty : @item.Quantity.ToString()</p>
+                                <input type="hidden" name="ProductID" value="@item.ProductID" />
+                                <input type="hidden" name="CartID" value="@item.CartID" />
+                                <button type="submit" class="cart-button">Remove Item</button>
+                            </div>
+                        </form>
+                        { cartID = item.CartID; }
+
+                    }
+
+                    <h3>Cart Total: R @cartTotal.ToString("0")</h3>
+                    <form asp-controller="Order" asp-action="PlaceOrder" method="post">
+                        <input type="hidden" name="CartID" value="@cartID" />
+                        <button type="submit" class="order-button">Place Order</button>
+                    </form>
+                }
+            </div>
+        </div>
+    </div>
+</div>

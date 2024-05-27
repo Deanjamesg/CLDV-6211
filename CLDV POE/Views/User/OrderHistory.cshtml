@@ -1,0 +1,52 @@
+﻿@{
+    ViewData["Title"] = "Order History";
+    var orderList = ViewData["OrderHistory"] as List<CLDV_POE.Models.OrderHistoryDisplay>;
+}
+
+<div class="container">
+    <div class="account">
+        <div class="account-box-options">
+            <div class="navbar">
+                <a class="nav-link" asp-controller="User" asp-action="Account">Account Details</a>
+                <a class="nav-link" asp-controller="User" asp-action="ViewCart">View Cart</a>
+                <a class="nav-link" asp-controller="User" asp-action="OrderHistory">Order History</a>
+                <a class="nav-link" asp-controller="Product" asp-action="YourProducts">Your Products</a>
+                <a class="nav-link" asp-controller="Product" asp-action="SellProduct">Sell Products</a>
+                <a class="nav-link" asp-controller="User" asp-action="Clients">Your Clients</a>
+                <a class="nav-link" asp-controller="User" asp-action="SignOut">Sign Out</a>
+            </div>
+        </div>
+        <div class="account-box-content">
+            <h3>Order History</h3>
+            <div class="product-container">
+                @if (orderList != null)
+                {
+                    <div class="table">
+                        <table>
+                            <tr style="border: none;">
+                                <th>Order No.</th>
+                                <th>Date of Order</th>
+                                <th>Total Amount</th>
+                                <th>Cart</th>
+                            </tr>
+                            @foreach (var order in orderList)
+                            {
+                                <form asp-controller="User" asp-action="ViewOrder" method="post">
+                                <tr style="border: none;">
+                                    <td>@order.OrderID</td>
+                                    <td>@order.OrderDate.ToString("d")</td>
+                                    <td>R @order.CartTotal.ToString("0")</td>
+                                    <input type="hidden" name="CartID" value="@order.CartID" />
+                                    <input type="hidden" name="OrderID" value="@order.OrderID" />
+                                    <td>
+                                        <button type="submit" class="cart-button">View</button>
+                                    </td>
+                                </tr>
+                                </form>
+                            }
+                        </table>
+                    </div>
+                }
+        </div>
+    </div>
+</div>

@@ -1,0 +1,48 @@
+﻿@model CLDV_POE.Models.User
+@{
+    ViewData["Title"] = "Order Cart";
+    var cartItems = ViewData["OrderCart"] as List<CLDV_POE.Models.ViewCartDisplay>;
+    decimal cartTotal = 0;
+    if (ViewData["OrderTotal"] != null)
+    {
+        cartTotal = Convert.ToDecimal(ViewData["OrderTotal"]);
+    }
+    var orderNo = ViewData["OrderNo"];
+}
+
+<div class="container">
+    <div class="account">
+        <div class="account-box-options">
+            <div class="navbar">
+                <a class="nav-link" asp-controller="User" asp-action="Account">Account Details</a>
+                <a class="nav-link" asp-controller="User" asp-action="ViewCart">View Cart</a>
+                <a class="nav-link" asp-controller="User" asp-action="OrderHistory">Order History</a>
+                <a class="nav-link" asp-controller="Product" asp-action="YourProducts">Your Products</a>
+                <a class="nav-link" asp-controller="Product" asp-action="SellProduct">Sell Products</a>
+                <a class="nav-link" asp-controller="User" asp-action="Clients">Your Clients</a>
+                <a class="nav-link" asp-controller="User" asp-action="SignOut">Sign Out</a>
+            </div>
+        </div>
+
+        <div class="account-box-content">
+            <h3>Order No: @orderNo</h3>
+            <div class="product-container">
+                @if (cartItems != null)
+                {
+                    @foreach (var item in cartItems)
+                    {
+                        <div class="card">
+                            <img src="@item.ProductURL" class="card-img" alt="@item.ProductName">
+                            <h5 class="card-title">@item.ProductName</h5>
+                            <p class="card-desc">@item.ProductDescription</p>
+                            <p class="card-price">R @item.ProductPrice.ToString("0")</p>
+                            <p class="card-quantity">Qty : @item.Quantity.ToString()</p>
+                        </div>
+                    }
+                    <h3>Cart Total: R @cartTotal.ToString("0")</h3>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
