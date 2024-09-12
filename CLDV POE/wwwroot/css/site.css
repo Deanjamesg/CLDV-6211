@@ -191,17 +191,20 @@ html {
 .container h1 {
     font-size: 8em;
     font-weight: 500;
-    color: #fff;
+/*    color: #fff;*/
+    color: saddlebrown;
     letter-spacing: 5px;
     cursor: pointer;
     text-transform: uppercase;
-    transition: 0.75s;
+    transition: 0.25s;
 }
 
-.container h1:hover {
-    color: #fff;
-    text-shadow: 0 0 5px #fff, 0 0 25px #fff, 0 0 50px #fff, 0 0 100px #fff;
-}
+    .container h1:hover {
+        /*    color: #fff;*/
+        /*    text-shadow: 0 0 5px #fff, 0 0 25px #fff, 0 0 50px #fff, 0 0 100px #fff;*/
+        color: sandybrown;
+        text-shadow: 0 0 5px sandybrown, 0 0 25px sandybrown;
+    }
 .container h2 {
     color: white;
     font-size: 3.5rem;
@@ -735,13 +738,24 @@ html {
 }
     
 body {
-    background-image: url('https://static.vecteezy.com/system/resources/previews/024/741/762/non_2x/nature-hardwood-stripes-create-abstract-tree-backdrop-generative-ai-free-photo.jpg');
+/*    background-image: url('https://static.vecteezy.com/system/resources/previews/024/741/762/non_2x/nature-hardwood-stripes-create-abstract-tree-backdrop-generative-ai-free-photo.jpg');*/
+    background-image: url(/Images/Elephants2.png);
     background-size: cover;
     background-position: center;
     padding: 0px;
     color: white;
     margin-bottom: 70px;
     font-family: Poppins, sans-serif;
+}
+
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
 }
 
 header {

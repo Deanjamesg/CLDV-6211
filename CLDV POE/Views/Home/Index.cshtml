@@ -2,29 +2,37 @@
     ViewData["Title"] = "Home";
 }
 
-<div class="container">
-    <h1>KhumaloCraft Emporium</h1>
-    <p>Explore our collection of handcrafted products from artisans worldwide.</p>
-    <hr />
-    <div class="content">
-        <div class="box">
-            <h3>About Us</h3>
-            <p>Learn more about KhumaloCraft Emporium and our mission to connect artisans with a global audience.</p>
-            <a class="btn btn-secondary box-button" asp-controller="Home" asp-action="AboutUs">Read More</a>
+<body>
+   @* <video autoplay muted loop id="background-video">
+        <source src="~/Images/Rough Draft Fixed.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>*@
+    <div class="container">
+        <h1>KhumaloCraft</h1>
+        <p>Explore our collection of handcrafted products from artisans worldwide.</p>
+        <hr />
+        <div class="content">
+            <div class="box">
+                <h3>About Us</h3>
+                <p>Learn more about KhumaloCraft Emporium and our mission to connect artisans with a global audience.</p>
+                <a class="btn btn-secondary box-button" asp-controller="Home" asp-action="AboutUs">Read More</a>
+            </div>
+            <div class="box">
+                <h3>Contact Us</h3>
+                <p>Get in touch with us for any inquiries or assistance regarding our products and services.</p>
+                <a class="btn btn-secondary box-button" asp-controller="Home" asp-action="ContactUs">Contact Us</a>
+            </div>
+            <div class="box">
+                <h3>My Work</h3>
+                <p>Explore our collection of handcrafted products, including necklaces, carvings, and tapestries.</p>
+                <a class="btn btn-secondary box-button" asp-controller="Product" asp-action="Shop">View Collection</a>
+            </div>
         </div>
-        <div class="box">
-            <h3>Contact Us</h3>
-            <p>Get in touch with us for any inquiries or assistance regarding our products and services.</p>
-            <a class="btn btn-secondary box-button" asp-controller="Home" asp-action="ContactUs">Contact Us</a>
-        </div>
-        <div class="box">
-            <h3>My Work</h3>
-            <p>Explore our collection of handcrafted products, including necklaces, carvings, and tapestries.</p>
-            <a class="btn btn-secondary box-button" asp-controller="Product" asp-action="Shop">View Collection</a>
-        </div>
-    </div>
 
-</div>
+    </div>
+</body>
+
+
 
 
 @*
